@@ -37,10 +37,10 @@
 <%= item.id %>
 </td>
 <td>
-<a href='/detail/<%= item.id %>'><%= item.name %></a>
+<a href='/detail/<%= item.id %>'><%= item.title %></a>
 </td>
 <td>
-<%= item.series %>
+<%= item.contents %>
 </td>
 <td>
 <a href="/edit/<%= item.id %>">수정</a>
@@ -65,14 +65,14 @@
 
 
 <%
-var curSet = pasing.curSet
-var endPage = pasing.endPage
-var startPage = pasing.startPage
-var totalSet = pasing.totalSet
-var totalPage = pasing.totalPage
-var page_list_size = pasing.page_list_size
-var page_size = pasing.page_size
-var curPage = pasing.curPage
+var curSet = list.curSet
+var endPage = list.endPage
+var startPage = list.startPage
+var totalSet = list.totalSet
+var totalPage = list.totalPage
+var page_list_size = list.page_list_size
+var page_size = list.page_size
+var curPage = list.curPage
 %>
 
 
@@ -81,7 +81,7 @@ if(curSet > 1){
 %>
 
 <li value=(startPage -1) class="previous">
-<a href='/pasing/<%= ( startPage - 1) %>'>이전페이지</a>
+<a href='/list/<%= ( startPage - 1) %>'>이전페이지</a>
 </li>
 
 <%
@@ -96,7 +96,7 @@ if(i > totalPage){break;}
 if(i == curPage){
 %>
 <li value=<%= i %> class='' >
-<a href='/pasing/<%= i %>'>
+<a href='/list/<%= i %>'>
 <%= i %>
 </a>
 </li>
@@ -106,7 +106,7 @@ if(i == curPage){
 %>
 
 <li value=<%= i %> class='active' >
-<a href='/pasing/<%= i %>'>
+<a href='/list/<%= i %>'>
 <%= i %>
 </a>
 </li>
@@ -124,7 +124,7 @@ if(i == curPage){
 if(curSet < totalSet){
 %>
 <li value=( endPage + 1) class="next">
-<a href='/pasing/<%= ( endPage + 1) %>'>다음페이지</a>
+<a href='/list/<%= ( endPage + 1) %>'>다음페이지</a>
 </li>
 <%
 }
