@@ -2,7 +2,7 @@
 <html lang="ko">
 
 <head>
-<title>Bootstrap Example</title>
+<title>게시판</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,20 +13,18 @@
 <body>
 
 <div class="container">
-<h2>상품테이블</h2>
+<h2>글 목록</h2>
 
-<a href="/insert">추가하기</a>
+<a href="/insert">글쓰기</a>
 <br>
 <br>
-<p>상품테이블 목록입니다.</p>
 
 <table class="table table-striped">
 <thead>
 <tr>
-<th>아이디</th>
-<th>상품명</th>
-<th>넘버</th>
-<th>분류</th>
+<th>글 번호</th>
+<th>제목</th>
+<th>내용</th>
 <th>수정</th>
 <th>삭제</th>
 </tr>
@@ -42,16 +40,13 @@
 <a href='/detail/<%= item.id %>'><%= item.name %></a>
 </td>
 <td>
-<%= item.modelnumber %>
-</td>
-<td>
 <%= item.series %>
 </td>
 <td>
-<a href="/delete/<%= item.id %>">삭제</a>
+<a href="/edit/<%= item.id %>">수정</a>
 </td>
 <td>
-<a href="/edit/<%= item.id %>">수정</a>
+<a href="/delete/<%= item.id %>">삭제</a>
 </td>
 </tr>
 <% })%>
